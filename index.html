@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KANEKI</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+text-align:center;
+color:white;
+overflow:hidden;
+}
+
+/* فيديو الخلفية */
+#bgvideo{
+position:fixed;
+right:0;
+bottom:0;
+min-width:100%;
+min-height:100%;
+object-fit:cover;
+z-index:-2;
+}
+
+/* طبقة غامقة */
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+z-index:-1;
+}
+
+/* شاشة الدخول */
+#intro{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:black;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+font-size:28px;
+color:#00ff9c;
+letter-spacing:3px;
+}
+
+/* زر الدخول */
+.enter-btn{
+margin-top:30px;
+padding:15px 40px;
+border:1px solid #00ff9c;
+background:black;
+color:#00ff9c;
+cursor:pointer;
+font-size:18px;
+}
+
+.enter-btn:hover{
+background:#00ff9c;
+color:black;
+}
+
+/* المحتوى */
+.container{
+margin-top:150px;
+}
+
+/* اسم متحرك */
+h1{
+font-size:60px;
+color:red;
+text-shadow:0 0 20px red;
+animation: move 3s infinite alternate;
+}
+
+@keyframes move{
+0%{transform:translateX(-40px);}
+100%{transform:translateX(40px);}
+}
+
+.btn{
+display:block;
+width:260px;
+margin:20px auto;
+padding:15px;
+border-radius:10px;
+text-decoration:none;
+color:white;
+font-size:18px;
+background:rgba(0,0,0,0.7);
+border:1px solid red;
+transition:0.3s;
+}
+
+.btn:hover{
+background:red;
+}
+</style>
+</head>
+
+<body>
+
+<video id="bgvideo" loop playsinline>
+<source src="bg.mp4" type="video/mp4">
+</video>
+
+<div class="overlay"></div>
+
+<div id="intro">
+<div>ACCESSING SYSTEM...</div>
+<div style="margin-top:10px;">KANEKI NETWORK</div>
+<button class="enter-btn" onclick="enterSite()">ENTER</button>
+</div>
+
+<div class="container" id="main" style="display:none;">
+<h1>KANEKI</h1>
+
+<a class="btn" href="https://wa.me/201019492483">
+💬 راسلني واتساب
+</a>
+
+<a class="btn" href="https://chat.whatsapp.com/GjHlRKYIrjM5ljjJdxPIXl">
+👥 جروب واتساب
+</a>
+
+<a class="btn" href="https://whatsapp.com/channel/0029Vb7ifFdEVccC3XaA4w2e">
+📢 قناة واتساب
+</a>
+
+</div>
+
+<script>
+function enterSite(){
+document.getElementById("intro").style.display="none";
+document.getElementById("main").style.display="block";
+
+var vid = document.getElementById("bgvideo");
+vid.play();   // تشغيل الفيديو بالموسيقى بعد الضغط
+}
+</script>
+
+</body>
+</html>
